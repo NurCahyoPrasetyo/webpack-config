@@ -15,9 +15,9 @@ let plugins = [
 if (process.env.NODE_ENV === "production") {
   mode = "production";
   target = "browserslist";
-} else {
+} else if(process.env.SERVE) {
   plugins.push(new ReactRefreshWebpackPlugin());
-}
+};
 
 module.exports = {
   mode: mode,
